@@ -15,8 +15,8 @@ test += '1';
 console.log(test); // we got '21'
 
 test -= 1;
-// will be displayed 1
-console.log(test); // displayed 1
+// will be displayed 20
+console.log(test); // displayed 20
 
 test = Boolean(test);
 // should be 1
