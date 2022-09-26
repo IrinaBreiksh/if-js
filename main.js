@@ -60,35 +60,28 @@ function max1(a, y) {
 console.log(max1(5, 10));
 
 
-function min2(a, b) {
-  return a < b ? a : b;
-}
-min2(222, 4);
-
-function max2(a, b) {
-  return a > b ? a : b;
-}
-max2(222, 4);
-
-
 const min = (a, b) => a < b;
 min(222, 4);
 const max = (a, b) => a < b;
-max(333,52);
+max(333, 52);
 
-const Numbers = [5, 30, 8, 78, 60, 44, 3, 19, 20, 88];
+const Numbers = [0, 30, 8, 78, 60, 44, 3, 19, 20, 100];
+console.log(Numbers);
 function renameZero() {
   for (let i = 0; i < Numbers.length; i++) {
-    if (Numbers[i] % 10 === 0) {
-      console.log(`${Numbers[i]}zero`);
-    } else {
-      console.log(Numbers[i]);
+    if (Numbers[i] === 0) {
+      Numbers[i] = 'zero';
+    } else if (Numbers[i] % 100 === 0) {
+      Numbers[i] = Numbers[i] / 100 + 'zero' + 'zero';
+    } else if (Numbers[i] % 10 === 0) {
+      Numbers[i] = Numbers[i] / 10 + 'zero';
     }
   }
-return Numbers;
+  return Numbers;
 }
-renameZero();
+renameZero(Numbers);
 console.log(Numbers);
+
 
 function word() {
   for (let i = 0; i < word.length; i++) {
@@ -98,6 +91,5 @@ function word() {
   }
   return false;
 }
-console.log(word('mom'));
-console.log(word('one'));
-
+word("mom");
+console.log(word("mom"));
