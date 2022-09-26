@@ -59,7 +59,6 @@ function max1(a, y) {
 }
 console.log(max1(5, 10));
 
-
 const min = (a, b) => a < b;
 min(222, 4);
 const max = (a, b) => a < b;
@@ -82,7 +81,6 @@ function renameZero() {
 renameZero(Numbers);
 console.log(Numbers);
 
-
 function word() {
   for (let i = 0; i < word.length; i++) {
     if (word[i] === word[word.length - i]) {
@@ -91,5 +89,5 @@ function word() {
   }
   return false;
 }
-word("mom");
-console.log(word("mom"));
+word('mom');
+console.log(word('mom'));
