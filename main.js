@@ -62,29 +62,29 @@ console.log(max1(5, 10));
 function min(a, b) {
   return a < b ? a : b;
 }
-console.log(min(222,4));
+console.log(min(222, 4));
 
 function max(a, b) {
   return a > b ? a : b;
 }
-console.log(max(333,52));
+console.log(max(333, 52));
 
 const Numbers = [0, 30, 8, 78, 60, 44, 3, 19, 20, 100];
 console.log(Numbers);
-function renameZero() {
-  for (let i = 0; i < Numbers.length; i++) {
-    if (Numbers[i] === 0) {
-      Numbers[i] = 'zero';
-    } else if (Numbers[i] % 100 === 0) {
-      Numbers[i] = Numbers[i] / 100 + 'zero' + 'zero';
-    } else if (Numbers[i] % 10 === 0) {
-      Numbers[i] = Numbers[i] / 10 + 'zero';
+function renameZero(number) {
+  for (let i = 0; i < number.length; i++) {
+    if (number[i] === 0) {
+      number[i] = 'zero';
+    } else if (number[i] % 100 === 0) {
+      number[i] = number[i] / 100 + 'zero' + 'zero';
+    } else if (number[i] % 10 === 0) {
+      number[i] = number[i] / 10 + 'zero';
     }
   }
-  return Numbers;
+  return number;
 }
-renameZero(Numbers);
-console.log(Numbers);
+
+console.log(renameZero(Numbers));
 
 function palindrome(word) {
   for (let i = 0; i < Math.round(word.length / 2); i++) {
