@@ -81,13 +81,14 @@ function renameZero() {
 renameZero(Numbers);
 console.log(Numbers);
 
-function word() {
-  for (let i = 0; i < word.length; i++) {
-    if (word[i] === word[word.length - i]) {
-      return true;
+function palindrome(word) {
+  for (let i = 0; i < Math.round(word.length / 2) ; i++) {
+    if (word[i] !== word[word.length - i - 1]) {
+      return false;
     }
   }
-  return false;
+  return true;
 }
-word('mom');
-console.log(word('mom'));
+console.log(palindrome('one'));
+console.log(palindrome('mom'));
+
