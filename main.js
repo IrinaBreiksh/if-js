@@ -59,10 +59,15 @@ function max1(a, y) {
 }
 console.log(max1(5, 10));
 
-const min = (a, b) => a < b;
-min(222, 4);
-const max = (a, b) => a < b;
-max(333, 52);
+function min(a, b) {
+  return a < b ? a : b;
+}
+console.log(min(222,4));
+
+function max(a, b) {
+  return a > b ? a : b;
+}
+console.log(max(333,52));
 
 const Numbers = [0, 30, 8, 78, 60, 44, 3, 19, 20, 100];
 console.log(Numbers);
@@ -82,7 +87,7 @@ renameZero(Numbers);
 console.log(Numbers);
 
 function palindrome(word) {
-  for (let i = 0; i < Math.round(word.length / 2) ; i++) {
+  for (let i = 0; i < Math.round(word.length / 2); i++) {
     if (word[i] !== word[word.length - i - 1]) {
       return false;
     }
@@ -92,3 +97,12 @@ function palindrome(word) {
 console.log(palindrome('one'));
 console.log(palindrome('mom'));
 
+(() => {
+  function sum(a) {
+    return function (b) {
+      return a + b;
+    };
+  }
+
+  console.log(sum(5)(2));
+})();
