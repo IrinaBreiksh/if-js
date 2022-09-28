@@ -59,14 +59,10 @@ function max1(a, y) {
 }
 console.log(max1(5, 10));
 
-function min(a, b) {
-  return a < b ? a : b;
-}
-console.log(min(222, 4));
+const min = (a, b) => (a < b ? a : b);
+console.log(min(222, 11));
 
-function max(a, b) {
-  return a > b ? a : b;
-}
+const max = (a, b) => (a > b ? a : b);
 console.log(max(333, 52));
 
 const Numbers = [0, 30, 8, 78, 60, 44, 3, 19, 20, 100];
