@@ -5,10 +5,6 @@ export function sum(a) {
 }
 console.log(sum(5)(2));
 
-const text1 = document.getElementById('text1');
-const text2 = document.getElementById('text2');
-const text3 = document.getElementById('text3');
-
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 
 export function getColor() {
@@ -22,6 +18,16 @@ export function getColor() {
   };
 }
 
-text1.addEventListener('click', getColor());
-text2.addEventListener('click', getColor());
-text3.addEventListener('click', getColor());
+document.addEventListener('DOMContentLoaded', function () {
+  const text1 = document.getElementById('text1');
+  const text2 = document.getElementById('text2');
+  const text3 = document.getElementById('text3');
+  text1.addEventListener('click', getColor());
+  text2.addEventListener('click', getColor());
+  text3.addEventListener('click', getColor());
+});
+
+
+
+
+
