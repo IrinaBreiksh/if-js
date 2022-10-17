@@ -26,8 +26,3 @@ document.addEventListener('DOMContentLoaded', function () {
   text2.addEventListener('click', getColor());
   text3.addEventListener('click', getColor());
 });
-
-
-
-
-
