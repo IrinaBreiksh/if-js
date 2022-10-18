@@ -26,3 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
   text2.addEventListener('click', getColor());
   text3.addEventListener('click', getColor());
 });
+
+const date = '2020-11-26';
+const changeDate = () => {
+  return (
+    date.replaceAll('-', '.') && date.replace(/(\d+)-(\d+)-(\d+)/, '$3.$2.$1')
+  );
+};
+changeDate('2020-11-26');
+console.log(changeDate('2020-11-26'));
+
+
