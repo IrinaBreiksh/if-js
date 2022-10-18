@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
   text3.addEventListener('click', getColor());
 });
 
+
+
 const date = '2020-11-26';
 const changeDate = () => {
   return (
@@ -35,5 +37,4 @@ const changeDate = () => {
 };
 changeDate('2020-11-26');
 console.log(changeDate('2020-11-26'));
-
 
