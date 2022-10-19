@@ -5,36 +5,61 @@ export function sum(a) {
 }
 console.log(sum(5)(2));
 
-const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+const data = [
+  {
+    country: 'Russia',
+    city: 'Saint Petersburg',
+    hotel: 'Hotel Leopold',
+  },
+  {
+    country: 'Spain',
+    city: 'Santa Cruz de Tenerife',
+    hotel: 'Apartment Sunshine',
+  },
+  {
+    country: 'Slowakia',
+    city: 'Vysokie Tatry',
+    hotel: 'Villa Kunerad',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hostel Friendship',
+  },
+  {
+    country: 'Indonesia',
+    city: 'Bali',
+    hotel: 'Ubud Bali Resort&SPA',
+  },
+  {
+    country: 'Netherlands',
+    city: 'Rotterdam',
+    hotel: 'King Kong Hostel',
+  },
+  {
+    country: 'Marocco',
+    city: 'Ourika',
+    hotel: 'Rokoko Hotel',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hotel Rehberge Berlin Mitte',
+  },
+];
 
-export function getColor() {
-  let i = 0;
-  return function getColor(event) {
-    event.target.style.color = colors[i];
-    if (i === colors.length) {
-      i = 0;
-    }
-    i++;
-  };
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  const text1 = document.getElementById('text1');
-  const text2 = document.getElementById('text2');
-  const text3 = document.getElementById('text3');
-  text1.addEventListener('click', getColor());
-  text2.addEventListener('click', getColor());
-  text3.addEventListener('click', getColor());
-});
-
-
-
-const date = '2020-11-26';
-const changeDate = () => {
-  return (
-    date.replaceAll('-', '.') && date.replace(/(\d+)-(\d+)-(\d+)/, '$3.$2.$1')
-  );
+console.log(data[2].country + ',' + data[2].city + ',' + data[2].hotel);
+const getPlace = (word) => {
+  for (let i = 0; i < data.length; i++) {
+    if (
+      data[i].country.includes(word) ||
+      data[i].city.includes(word) ||
+      data[i].hotel.includes(word)
+    )
+      return data[i].country + ',' + data[i].city + ',' + data[i].hotel;
+  }
 };
-changeDate('2020-11-26');
-console.log(changeDate('2020-11-26'));
 
+getPlace('Germany');
+
+console.log(getPlace('Germany'));
