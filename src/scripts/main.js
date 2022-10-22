@@ -1,9 +1,11 @@
-export function sum(a) {
-  return function (b) {
-    return a + b;
-  };
-}
-console.log(sum(5)(2));
+export const changeDate = (date) => {
+  return (
+    date.replaceAll('-', '.') && date.replace(/(\d+)-(\d+)-(\d+)/, '$3.$2.$1')
+  );
+};
+changeDate('2020-11-26');
+console.log(changeDate('2020-11-26'));
+
 
 const data = [
   {
@@ -50,16 +52,19 @@ const data = [
 
 console.log(data[2].country + ',' + data[2].city + ',' + data[2].hotel);
 const getPlace = (word) => {
+  const result=[];
   for (let i = 0; i < data.length; i++) {
     if (
       data[i].country.includes(word) ||
       data[i].city.includes(word) ||
       data[i].hotel.includes(word)
     )
-      return data[i].country + ',' + data[i].city + ',' + data[i].hotel;
+      result.push(data[i].country + ',' + data[i].city + ',' + data[i].hotel);
   }
+  return result;
 };
 
 getPlace('Germany');
-
 console.log(getPlace('Germany'));
+
+
