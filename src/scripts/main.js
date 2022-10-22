@@ -1,28 +1,70 @@
-export function sum(a) {
-  return function (b) {
-    return a + b;
-  };
-}
-console.log(sum(5)(2));
+export const changeDate = (date) => {
+  return (
+    date.replaceAll('-', '.') && date.replace(/(\d+)-(\d+)-(\d+)/, '$3.$2.$1')
+  );
+};
+changeDate('2020-11-26');
+console.log(changeDate('2020-11-26'));
 
-const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 
-export function getColor() {
-  let i = 0;
-  return function getColor(event) {
-    event.target.style.color = colors[i];
-    if (i === colors.length) {
-      i = 0;
-    }
-    i++;
-  };
-}
+const data = [
+  {
+    country: 'Russia',
+    city: 'Saint Petersburg',
+    hotel: 'Hotel Leopold',
+  },
+  {
+    country: 'Spain',
+    city: 'Santa Cruz de Tenerife',
+    hotel: 'Apartment Sunshine',
+  },
+  {
+    country: 'Slowakia',
+    city: 'Vysokie Tatry',
+    hotel: 'Villa Kunerad',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hostel Friendship',
+  },
+  {
+    country: 'Indonesia',
+    city: 'Bali',
+    hotel: 'Ubud Bali Resort&SPA',
+  },
+  {
+    country: 'Netherlands',
+    city: 'Rotterdam',
+    hotel: 'King Kong Hostel',
+  },
+  {
+    country: 'Marocco',
+    city: 'Ourika',
+    hotel: 'Rokoko Hotel',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hotel Rehberge Berlin Mitte',
+  },
+];
 
-document.addEventListener('DOMContentLoaded', function () {
-  const text1 = document.getElementById('text1');
-  const text2 = document.getElementById('text2');
-  const text3 = document.getElementById('text3');
-  text1.addEventListener('click', getColor());
-  text2.addEventListener('click', getColor());
-  text3.addEventListener('click', getColor());
-});
+console.log(data[2].country + ',' + data[2].city + ',' + data[2].hotel);
+const getPlace = (word) => {
+  const result=[];
+  for (let i = 0; i < data.length; i++) {
+    if (
+      data[i].country.includes(word) ||
+      data[i].city.includes(word) ||
+      data[i].hotel.includes(word)
+    )
+      result.push(data[i].country + ',' + data[i].city + ',' + data[i].hotel);
+  }
+  return result;
+};
+
+getPlace('Germany');
+console.log(getPlace('Germany'));
+
+
