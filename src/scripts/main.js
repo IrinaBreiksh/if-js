@@ -169,21 +169,18 @@ const getPlace = (word) => {
   return result;
 };
 
-getPlace('USA');
-console.log(getPlace('USA'));
+getPlace();
 
+const getCities = hotels.reduce((acc, item) => {
+  const result = { ...acc };
 
-
-const getCities = hotels.reduce((acc, item)=> {
-  const result = {...acc};
-
-  if (!result[item.country]){
-    result[item.country]=[];
+  if (!result[item.country]) {
+    result[item.country] = [];
   }
 
   result[item.country].push(item.city);
 
-   return result;
+  return result;
 }, {});
 
 console.log(getCities);
