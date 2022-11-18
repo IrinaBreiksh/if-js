@@ -29,7 +29,6 @@ const object3 = {
   b: 'b',
 };
 
-
 export function deepEqual(object1, object2) {
   const value1 = Object.getOwnPropertyNames(object1);
   const value2 = Object.getOwnPropertyNames(object2);
@@ -40,10 +39,14 @@ export function deepEqual(object1, object2) {
 
   for (let i = 0; i < value1.length; i += 1) {
     const values = value1[i];
-    const bothAreObjects = typeof(object1[values]) === 'object' && typeof(object2[values]) === 'object';
+    const bothAreObjects =
+      typeof object1[values] === 'object' &&
+      typeof object2[values] === 'object';
 
-    if ((!bothAreObjects && (object1[values] !== object2[values]))
-      || (bothAreObjects && !deepEqual(object1[values], object2[values]))) {
+    if (
+      (!bothAreObjects && object1[values] !== object2[values]) ||
+      (bothAreObjects && !deepEqual(object1[values], object2[values]))
+    ) {
       return false;
     }
   }
@@ -53,4 +56,3 @@ export function deepEqual(object1, object2) {
 
 console.log(deepEqual(object1, object2));
 console.log(deepEqual(object1, object3));
-
